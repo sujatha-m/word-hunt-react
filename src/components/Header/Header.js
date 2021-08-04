@@ -8,13 +8,13 @@ import React from 'react'
 import './Header.css'
 import categories from '../../data/category'
 
-const Header = ({ setCategory, category, word, setWord }) => {
+const Header = ({ setCategory, category, word, setWord, LightMode }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: '#fff'
+        main: LightMode ? '#000' : '#fff'
       },
-      type: 'dark'
+      type: LightMode ? 'light' : 'dark'
     }
   })
 
