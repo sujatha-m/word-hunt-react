@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
 import Container from '@material-ui/core/Container'
 import Header from './components/Header/Header'
+import Definitions from './components/Definitions/Definitions'
 
 const styles = {
   backgroundColor: '#282c34',
@@ -20,6 +21,7 @@ function App () {
   const [word, setWord] = useState('')
   const [meanings, setMeanings] = useState([])
   const [category, setCategory] = useState('en')
+
   const dictionaryApi = async () => {
     try {
       const data = await axios.get(
@@ -35,8 +37,9 @@ function App () {
 
   useEffect(() => {
     dictionaryApi()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [word, category])
-  
+
   return (
     <div className='App' style={styles}>
       <Container maxWidth='md' style={styles1}>
@@ -46,6 +49,9 @@ function App () {
           word={word}
           setWord={setWord}
         />
+        {meanings && (
+          <Definitions word={word} meanings={meanings} category={category} />
+        )}
       </Container>
     </div>
   )
