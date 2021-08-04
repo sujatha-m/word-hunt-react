@@ -30,13 +30,13 @@ const Definitions = ({ word, meanings, category, LightMode }) => {
                 <hr style={{ backgroundColor: 'black', width: '100%' }}></hr>
                 {def.example && (
                   <span>
-                    <b>Example:</b>
+                    <b>Example: </b>{' '}
                     {def.example}
                   </span>
                 )}
                 {def.synonyms && (
                   <span>
-                    <b>Synonmys:</b>
+                    <b>Synonmys:</b>{' '}
                     {def.synonyms.map(s => `${s},`)}
                   </span>
                 )}
