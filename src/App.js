@@ -6,20 +6,7 @@ import Header from './components/Header/Header'
 import Definitions from './components/Definitions/Definitions'
 import { Switch } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import { grey, indigo } from '@material-ui/core/colors'
-
-// const styles = {
-//   backgroundColor: LightMode ? '#fff' : '#282c34',
-//   color: LightMode ? 'black' : '#fff',
-//   height: '100vh'
-// }
-
-// const styles1 = {
-//   display: 'flex',
-//   flexDirection: 'column',
-//   height: '100vh',
-//   justifyContent: 'space-evenly'
-// }
+import { indigo } from '@material-ui/core/colors'
 
 function App () {
   const [word, setWord] = useState('')
